@@ -7,5 +7,3 @@
 3. Parking cancellation – If the cancelation is requested at least 2 days before the event, you will mark the reservation ‘cancelled’ and ‘refunded’. You will update the garage availability accordingly. If the cancellation is requested too late, you will do the same except that no refund will be generated.
   
 4. Event creation - The venue administrator can enter new events (at which venue) and their dates and pricing for each garage at different levels. He/she can also change the information such as parking fees , available spaces (for VIPs), event days (for example, a show on a certain day is rescheduled). He/she can remove an event or a date.
-
-JF
