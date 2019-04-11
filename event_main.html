@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>event main page</title>
+</head>
+<body>
     <p>Hi, dear administrator! this is the event main page</p>
     <p></p>
     <p>please select from below what do you want to do today:</p>
-    <p><input type="submit" name="create" value="create an event"></p>
-    <p><input type="submit" name="remove" value="remove an event"></p>
-
-</head>
-<body>
-
+    <div class="content">
+        <table class="table">
+            <tr>
+                <td>
+                    <button onclick="window.location.href='event_creation.html'">create an event</button>
+                </td>
+                <td>
+                    <button onclick="window.location.href='signup_page.html'">remove an event</button>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

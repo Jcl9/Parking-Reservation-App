@@ -21,8 +21,8 @@ $result=mysqli_query($con,$add_query);
 if ($result){
     echo "event created Successfully!";
     echo "<br>";
-    echo "You will be redirected to the main page in 3 seconds.";
-    echo "<script type='text/javascript'>setTimeout(function(){window.location.href='TEMP_Main_Page.html';},3000);</script>";
+    echo "You will be redirected to the main page in 1 seconds.";
+    echo "<script type='text/javascript'>setTimeout(function(){window.location.href='event_main.html';},1000);</script>";
 }else{
     die('Error: ' . mysqli_error($con));
 }
