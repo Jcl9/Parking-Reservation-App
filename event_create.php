@@ -6,6 +6,7 @@ if(!isset($_POST['submit'])){
 }
 
 $Event_name=$_POST['Event_name'];
+$Event_date=$_POST['Event_date'];
 $Day_of_week=$_POST['Day_of_week'];
 $Event_price = $_POST['Event_price'];
 
@@ -15,7 +16,7 @@ if (empty($Event_price))
 }
 
 include('connect.php');
-$add_query="insert into EVENT(Event_name,Day_of_week,Event_price) values ('$Event_name','$Day_of_week','$Event_price')";
+$add_query="insert into EVENT(Event_name,Event_date,Day_of_week,Event_price) values ('$Event_name','$Event_date','$Day_of_week','$Event_price')";
 $result=mysqli_query($con,$add_query);
 
 if ($result){

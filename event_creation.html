@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>create a event</title>
+    <title>create an event</title>
 </head>
 <body>
 <form action="event_create.php" method="post">
     <p>please enter the event information in following fields</p>
-    <p>event Name*:<input type="text" name="Event_name"></p>
-    <p>day of week*:<input type="text" name="Day_of_week"></p>
-    <p>event price*:<input type="text" name="Event_price"></p>
+    <p>event Name*:<br><input type="text" name="Event_name"></p>
+    <p>event date*:<br>
+        <input type="date" name="Event_date"></p>
+    <p>day of week*:<br>
+        <select name="Day_of_week">
+            <option value="Mon">Mon</option>
+            <option value="Tue">Tue</option>
+            <option value="Wed">Wed</option>
+            <option value="Thu">Thu</option>
+            <option value="Fir">Fir</option>
+            <option value="Sat">Sat</option>
+            <option value="Sun">Sun</option>
+        </select>
+    </p>
+    <p>event price:<br><input type="text" name="Event_price"></p>
     <p>(*) indicates required fields</p>
-    <p><input type="submit" name="submit" value="submit"></p>
+    <p><input type="submit" name="submit" value="submit">
+        <input type="reset"></p>
 </form>
 </body>
 </html>
