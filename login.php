@@ -14,13 +14,19 @@
         echo "You will be redirected to the login page in 3 seconds.";
         echo "<script type='text/javascript'>setTimeout(function(){window.location.href='login.html';},3000);</script>";
     }else {
-        $search_sql = "select * from customer where User_id = '$uid' and Password='$pwd'";
+        $search_sql = "select * from customer where User_id = '$uid' and Password='$pwd' and admin = '0'";
+        $search_sql_admin = "select * from customer where User_id = '$uid' and Password='$pwd' and admin = '1'";
         $result = mysqli_query($con, $search_sql);
+        $result_admin = mysqli_query($con, $search_sql_admin);
         $rows = mysqli_num_rows($result);
+        $rows_admin = mysqli_num_rows($result_admin);
         if ($rows) {
             header("refresh:0;url=TEMP_Main_Page.html");//You should change the url once the main function page is completed
             exit;
-        } else {
+        } else if($rows_admin){
+            header("refresh:0;url=TEMP_admin_page.html");//You should change the url once the main function page is completed
+            exit;
+        } else{
             echo "Incorrect User_id or Password!";
             echo "<br>";
             echo "You will be redirected to the login page in 3 seconds.";

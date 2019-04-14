@@ -18,7 +18,7 @@
     }
 
     include('connect.php');
-    $addquery="insert into customer(Fname,Lname,User_id,Password,Phone_num,Vehicle_id,Vehicle_type) values ('$fname','$Lname','$uid','$pwd','$phone','$vid','$vtype')";
+    $addquery="insert into customer(Fname,Lname,User_id,Password,Phone_num,Vehicle_id,Vehicle_type,admin) values ('$fname','$Lname','$uid','$pwd','$phone','$vid','$vtype','0')";
     $result=mysqli_query($con,$addquery);
 
     if ($result){
