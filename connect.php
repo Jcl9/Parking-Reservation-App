@@ -8,5 +8,6 @@
         die("can't connect".mysqli_connect_error());
     }
 
+
     mysqli_select_db($con,'project1');
 ?>

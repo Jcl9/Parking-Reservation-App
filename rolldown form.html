@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parking Reservation</title>
+</head>
+<body>
+    <form action="reserve2.php" method="post">
+    	<p>Event*:
+        	<select name="event" onChange="submit">
+            	<option value="event1">Football Game</option>
+                <option value="event2">Hockey Game</option>
+                <option value="event3">Soccer Game</option>
+            </select>
+        </p>
+        <p>Date*(Year-Month-Day):
+        	<select name="days" onChange="submit">
+            	<option value="day1">2019-01-23</option>
+                <option value="day2">2019-01-24</option>
+                <option value="day3">2019-01-25</option>
+            </select>
+        </p>
+        <p>Parking Garage*:
+        	<select name="garage" onChange="submit">
+            	<option value="garage1">Garage A</option>
+                <option value="garage2">Garage B</option>
+                <option value="garage3">Garage C</option>
+            </select>
+        </p>
+        <p>Prices*:
+        	<select name="price">
+            	<option value="level1">Level 1: $5.00</option>
+                <option value="level2">Level 2: $5.60</option>
+                <option value="level3">Level 3: $6.50</option>
+            </select>
+        </p>
+        <p>Asterisk (*) indicates required fields</p>
+        <p><input type="submit" name="submit" value="submit"></p>
+    </form>
+</body>
+</html>
