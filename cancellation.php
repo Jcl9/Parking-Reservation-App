@@ -18,7 +18,7 @@
 		   	$sql = "UPDATE reservation SET status = 'cancelled & refunded' WHERE Rid = $Rid";
 			if (mysqli_query($con, $sql)) {
 				
-				Avai_space = $avai_space + 1
+				$avai_space = $avai_space + 1
 				echo "<h3>Booking cancelled and refunded.</h3>";
 			}
 			else{
@@ -28,7 +28,7 @@
 		   	$sql = "UPDATE reservation SET status = 'cancelled' WHERE Rid = $Rid";
 			if (mysqli_query($con, $sql)) {
 				
-				Avai_space = $avai_space + 1
+				$avai_space = $avai_space + 1
 				echo "<h3>Booking cancelled but not refunded.</h3>";
 			}
 			else{
