@@ -15,7 +15,7 @@
 
     $Rid = intval(htmlspecialchars($_POST["Rid"]));
 		if ($daydiff > 2){
-		   	$sql = "UPDATE $reservation SET status = 'cancelled & refunded' WHERE Rid = $Rid";
+		   	$sql = "UPDATE reservation SET status = 'cancelled & refunded' WHERE Rid = $Rid";
 			if (mysqli_query($conn, $sql)) {
 				
 				Avai_space = $avai_space + 1
