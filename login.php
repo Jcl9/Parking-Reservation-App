@@ -21,10 +21,10 @@
         $rows = mysqli_num_rows($result);
         $rows_admin = mysqli_num_rows($result_admin);
         if ($rows) {
-            header("refresh:0;url=TEMP_Main_Page.html");//You should change the url once the main function page is completed
+            header("refresh:0;url=TEMP_Main_Page.html");//user's page
             exit;
         } else if($rows_admin){
-            header("refresh:0;url=TEMP_admin_page.html");//You should change the url once the main function page is completed
+            header("refresh:0;url=event_main.html");//admin's page
             exit;
         } else{
             echo "Incorrect User_id or Password!";
