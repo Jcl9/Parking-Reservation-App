@@ -4,10 +4,10 @@
             exit("EXECUTION ERROR!");
     }
     $datecancelled = new DateTime("now");
-    $datereserved = $_POST("date")
+    $datereserved = $_POST("date");
     $interval = $datecancelled->diff($datereserved);
     $daydiff = $interval->days;
-    $avai_space = $_POST("Avai_space")
+    $avai_space = $_POST("Avai_space");
 
     include('connect.php');
     include('reserve2.php');
@@ -25,7 +25,7 @@
 				//echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
 		else{
-		   	$sql = "UPDATE $reservation SET status = 'cancelled' WHERE Rid = $Rid";
+		   	$sql = "UPDATE reservation SET status = 'cancelled' WHERE Rid = $Rid";
 			if (mysqli_query($conn, $sql)) {
 				
 				Avai_space = $avai_space + 1
