@@ -24,6 +24,7 @@
 			else{
 				echo "Error: " . $sql . "<br>" . mysqli_error($con);
 			}
+		}
 		else{
 		   	$sql = "UPDATE reservation SET status = 'cancelled' WHERE Rid = $Rid";
 			if (mysqli_query($con, $sql)) {
