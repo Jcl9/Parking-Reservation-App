@@ -15,7 +15,7 @@ echo $table_size;
 echo "<br>";
 
 
-for ($x = 0; $x <= 4; $x++) {
+for ($x = 0; $x <= 5; $x++) {
     $row = $result->fetch_assoc();
     foreach ($row as $cname => $cvalue) {
         echo "$cname: $cvalue    |    ";

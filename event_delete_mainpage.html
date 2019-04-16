@@ -6,10 +6,26 @@
 </head>
 <body>
 <p>Hi, dear administrator!</p>
+
+<form action="event_main.html" method="post">
+    <p><input type="submit" name="submit" value="click here to go back to main page">
+    </p>
+</form>
+
 <p></p>
 <p>please select how you want to delete an event:</p>
 <div class="content">
     <table class="table">
+        <tr>
+            <td>
+                <p>delete by event number?</p>
+                <button onclick="window.location.href='event_delete_byNumber.html'">I want to delete by name</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>or....</p>
+            </td>
         <tr>
             <td>
                 <p>delete by name?</p>
@@ -28,6 +44,8 @@
             </td>
         </tr>
     </table>
+
 </div>
+
 </body>
 </html>
