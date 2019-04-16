@@ -22,7 +22,7 @@
 				echo "<h3>Booking cancelled and refunded.</h3>";
 			}
 			else{
-				//echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				echo "Error: " . $sql . "<br>" . mysqli_error($con);
 			}
 		else{
 		   	$sql = "UPDATE reservation SET status = 'cancelled' WHERE Rid = $Rid";
@@ -32,7 +32,7 @@
 				echo "<h3>Booking cancelled but not refunded.</h3>";
 			}
 			else{
-				//echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				echo "Error: " . $sql . "<br>" . mysqli_error($con);
 			}
 		}
 			mysqli_close($con);
