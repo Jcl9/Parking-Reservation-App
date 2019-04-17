@@ -20,13 +20,10 @@
         $result_admin = mysqli_query($con, $search_sql_admin);
         $rows = mysqli_num_rows($result);
         $rows_admin = mysqli_num_rows($result_admin);
-        Session_start();
         if ($rows) {
-            $_SESSION['currentLogin'] = $uid;
             header("refresh:0;url=TEMP_Main_Page.html");//user's page
             exit;
         } else if($rows_admin){
-            $_SESSION['currentLogin'] = $uid;
             header("refresh:0;url=event_main.html");//admin's page
             exit;
         } else{
