@@ -9,18 +9,26 @@ echo '<form action="event_main.html" method="post">
     </p>
 </form>';
 
-echo "hello! total event number is:";
+echo "hello! total event count is:";
 echo "<br>";
 
-$display_all="SELECT Event_ID,Event_name,Event_date,Day_of_week,Distance_garage FROM EVENT";
+$display_all="SELECT * FROM EVENT";
 $result=mysqli_query($con,$display_all);
 
 $table_size = mysqli_num_rows($result);
 
 echo $table_size;
 echo "<br>";
-
 echo "<br>";
 
+
+while($row = mysqli_fetch_assoc($result)) {
+    foreach ($row as $cname => $cvalue) {
+        echo "$cname: $cvalue ";
+        echo "<br>";
+    }
+    echo "<br>";
+}
+
+
 mysqli_close($con);
-?>
