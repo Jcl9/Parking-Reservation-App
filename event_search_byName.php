@@ -13,7 +13,7 @@ echo '<form action="event_main.html" method="post">
 $Event_name=$_POST['Event_name'];
 
 include('connect.php');
-$add_query="SELECT Event_ID,Event_name,Event_date,Day_of_week,Distance_garage FROM EVENT WHERE Event_name = '$Event_name'";
+$add_query="SELECT * FROM EVENT WHERE Event_name = '$Event_name'";
 $result=mysqli_query($con,$add_query);
 
 while($row = mysqli_fetch_assoc($result)) {
