@@ -3,8 +3,6 @@ header("Content-Type: text/html; charset=utf8");
 
 include('connect.php');
 
-
-
 // this is the go back ot main page component!
 echo '<form action="event_main.html" method="post">
     <p><input type="submit" name="submit" value="click here to go back to main page">
@@ -21,19 +19,6 @@ $table_size = mysqli_num_rows($result);
 
 echo $table_size;
 echo "<br>";
-
-
-while (    $row = $result->fetch_assoc()) {
-
-    foreach ($row as $cname => $cvalue) {
-        echo "$cname: $cvalue ";
-        echo "<br>";
-    }
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-}
-
 
 echo "<br>";
 
