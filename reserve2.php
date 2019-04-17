@@ -1,5 +1,6 @@
 <?php
     include('connect.php');
+    session_start();
     header("Content-Type: text/html; charset=utf8");
     if(!isset($_POST['submit'])){
             exit("EXECUTION ERROR!");
@@ -24,7 +25,7 @@
 
     $query = "SELECT * FROM 'Event'";
 
-    $addreservation = "insert into reservation(Res_id,Gar_name,User_id,Status,Event,Start_date,End_date,Res_fee,Refundability) values (NULL,'$pgarage','##','$status','$event','$date','$date','$fee','$refund')";
+    $addreservation = "insert into reservation(Res_id,Gar_name,User_id,Status,Event,Start_date,End_date,Res_fee,Refundability) values (NULL,'$pgarage','$_SESSION[currentLogin]','$status','$event','$date','$date','$fee','$refund')";
     $result = mysqli_query($con,$addreservation);
 
     if($result){
