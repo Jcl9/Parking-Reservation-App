@@ -7,11 +7,11 @@ echo "<br>";
 
 $eventname=$_POST['Event'];
 
-$display_all="SELECT * FROM EVENT_DATE where Event_name is ". $eventname;
+$display_all="SELECT * FROM EVENT where Event_name is ". $eventname;
 $result=mysqli_query($con,$display_all);
 
 while($row1 = mysqli_fetch_array($result)){
-    echo $row1[2];
+    echo $row1[3];
 }
 
 ?>
