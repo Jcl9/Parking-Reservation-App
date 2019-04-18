@@ -9,7 +9,7 @@
 
     $Rid = $_POST["Res_id"];
     $Lno = "SELECT Gar_level from reservation where Res_id=$Rid";
-    $datecancelled = date('Y-m-d');
+    $datecancelled = new DateTime("now");
     $datereserved = "SELECT Reserve_date from RESERVATION WHERE Res_id=$Rid";
     $interval = $datecancelled->diff($datereserved);
     $daydiff = $interval->days;
