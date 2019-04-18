@@ -46,4 +46,18 @@ $row_event = mysqli_fetch_array($event_query);
 $event_id = $row_event[0];
 
 echo "  EventID is ", $event_id;
+
+$start_date = '2019-04-27';
+$end_date = '2019-04-28';
+
+$display_price="SELECT res_fee FROM reservation where reserve_date = '$start_date'";
+$result_price=mysqli_query($con,$display_price);
+$total_revenue = 0;
+
+while ($row_price = mysqli_fetch_array($result_price)){
+    $price = $row_price[0];
+    echo "Price are $" ,$price , "<br>";
+    $total_revenue = $total_revenue + $price;
+}
+
 ?>
