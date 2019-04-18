@@ -6,18 +6,20 @@
             exit("EXECUTION ERROR!");
 
     }
-    
+
+    $Rid = intval(htmlspecialchars($_POST["Rid"]));
+    $Lno = "SELECT Gar_level from RESERVATION where Rid=$Rid";
     $datecancelled = new DateTime("now");
-    $datereserved = $_POST("date");
+    $datereserved = "SELECT Reserve_date from RESERVATION WHERE Rid=$Rid";
     $interval = $datecancelled->diff($datereserved);
     $daydiff = $interval->days;
-    $avai_space = $_POST("Avai_space");
+    $avai_space = "SELECT Available_space_level from RESERVATION WHERE Gar_level=$Lno";
 
     include('connect.php');
     include('reserve.php');
 
 
-    $Rid = intval(htmlspecialchars($_POST["Rid"]));
+
 		if ($daydiff > 2) {
             $sql = "UPDATE reservation SET status = 'cancelled & refunded' WHERE Rid = $Rid";
             if (mysqli_query($con, $sql)) {
