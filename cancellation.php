@@ -1,7 +1,7 @@
 <?php
     header("Content-Type: text/html; charset=utf8");
 
-    if(!isset($_POST['Cancel'])){
+    if(!isset($_POST['Submit'])){
 
             exit("EXECUTION ERROR!");
 
@@ -50,7 +50,7 @@
 		echo "<h3>Reservation deleted.</h3>";
             }
         else {
-		echo "Error: " . $sql . "<br>" . mysqli_error($con);
+		echo "Error: " . $sql2 . "<br>" . mysqli_error($con);
             }
             mysqli_close($con);
 ?>
