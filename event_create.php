@@ -12,7 +12,7 @@ $Venue = $_POST['Venue'];
 
 
 include('connect.php');
-$add_query="insert into EVENT(Event_ID, Event_name,Event_date,Day_of_week,Venue) values (NULL,'$Event_name','$Event_date','$Day_of_week','$Venue')";
+$add_query="insert into event(Event_ID, Event_name,Event_date,Day_of_week,Vname) values (NULL,'$Event_name','$Event_date','$Day_of_week','$Venue')";
 $result=mysqli_query($con,$add_query);
 
 

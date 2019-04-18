@@ -22,7 +22,7 @@ echo "data changed Successfully, here is the new profile for this event: ";
 echo "<br>";
 echo "<br>";
 
-$add_query="SELECT * FROM EVENT WHERE Event_id = '$Event_id' AND Gar_level = '$Gar_level' AND Gar_id = '$Gar_id' ";
+$add_query="SELECT * FROM GARAGE_LEVEL_EVENT_DATE WHERE Event_id = '$Event_id' AND Gar_level = '$Gar_level' AND Gar_id = '$Gar_id' ";
 $result=mysqli_query($con,$add_query);
 
 $row = mysqli_fetch_assoc($result);
