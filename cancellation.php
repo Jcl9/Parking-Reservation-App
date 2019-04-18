@@ -7,10 +7,10 @@
 
     }
 
-    $Rid = $_POST["Rid"];
-    $Lno = "SELECT Gar_level from reservation where Rid=$Rid";
-    $datecancelled = new DateTime("now");
-    $datereserved = "SELECT Reserve_date from RESERVATION WHERE Rid=$Rid";
+    $Rid = $_POST["Res_id"];
+    $Lno = "SELECT Gar_level from reservation where Res_id=$Rid";
+    $datecancelled = date('Y-m-d');
+    $datereserved = "SELECT Reserve_date from RESERVATION WHERE Res_id=$Rid";
     $interval = $datecancelled->diff($datereserved);
     $daydiff = $interval->days;
     $avai_space = "SELECT Available_space_level from GAR_LEVEL WHERE Gar_level=$Lno";
@@ -22,7 +22,7 @@
 
 
 		if ($daydiff > 2) {
-            $sql = "UPDATE reservation SET status = 'cancelled & refunded' WHERE Rid = $Rid";
+            $sql = "UPDATE reservation SET status = 'cancelled & refunded' WHERE Res_id = $Rid";
             if (mysqli_query($con, $sql)) {
 
                 $query = mysql_query("UPDATE gar_level SET Available_space_level = $avai_space +1 WHERE Gar_level = $Lno");
@@ -33,7 +33,7 @@
             }
         }
 		else{
-		   	$sql = "UPDATE reservation SET status = 'cancelled' WHERE Rid = $Rid";
+		   	$sql = "UPDATE reservation SET status = 'cancelled' WHERE Res_id = $Rid";
 			if (mysqli_query($con, $sql)) {
 
                 $query = mysql_query("UPDATE gar_level SET Available_space_level = $avai_space +1 WHERE Gar_level = $Lno");
@@ -44,7 +44,7 @@
 				echo "Error: " . $sql . "<br>" . mysqli_error($con);
 			}
         }
-		$sql2 = "DELETE FROM reservation WHERE Rid = $Rid";
+		$sql2 = "DELETE FROM reservation WHERE Res_id = $Rid";
             if (mysqli_query($con, $sql2)) {
                 echo "<h3>Booking deleted.</h3>";
             }
