@@ -14,5 +14,4 @@ while ($row_reserve = mysqli_fetch_array($result_reserve)){
 
 ?>
 
-<a href="make_reservation.html"><p>Back to the reservation page</p></a>
-<a href="reservation_main.html"><p>Back to the main page</p></a>
+
