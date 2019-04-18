@@ -3,11 +3,13 @@
     if(!isset($_POST["submit"])){
         exit("EXECUTION ERROR!");
     }
+    session_start();
 
     include('connect.php');
     $uid = $_POST['User_id'];
     $pwd= $_POST['Password'];
 
+    $_SESSION['name'] = $uid;
     if (!$uid || !$pwd){
         echo "The login information is incomplete!";
         echo "<br>";

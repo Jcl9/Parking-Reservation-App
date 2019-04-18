@@ -1,6 +1,6 @@
 <?php
 session_start();
-$user = '01234';
+$user = $_SESSION['name'];
 
 header("Content-Type: text/html; charset=utf8");
 if(!isset($_POST['submit'])){
@@ -62,7 +62,7 @@ $event_result = "Select Event_ID From event where event_name = '$event' and even
 $event_query = mysqli_query($con, $event_result);
 $row_event = mysqli_fetch_array($event_query);
 $event_id = $row_event[0];
-$user = 114 ;
+
 $addreservation = "insert into reservation(Res_id,Gar_name,Gar_level,User_id,Status,Event_id,Reserve_date,Res_fee,Refundability) values (NULL,'$pgarage','$glevel','$user','$status','$event_id','$date','$price','$refund')";
 $result = mysqli_query($con,$addreservation);
 
