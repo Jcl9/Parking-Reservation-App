@@ -10,7 +10,7 @@ include('connect.php');
 $start_date = $_POST['Date'];
 $end_date = $_POST['Date2'];
 
-$display_price="SELECT res_fee FROM reservation where reserve_date = '$start_date'";
+$display_price="SELECT res_fee FROM reservation where reserve_date = '$start_date' and Status = 'Active'";
 $result_price=mysqli_query($con,$display_price);
 $total_revenue = 0;
 
@@ -21,7 +21,7 @@ while ($row_price = mysqli_fetch_array($result_price)){
     $total_revenue = $total_revenue + $price;
 }
 
-$display_price2="SELECT res_fee FROM reservation where reserve_date = '$end_date'";
+$display_price2="SELECT res_fee FROM reservation where reserve_date = '$end_date' and status = 'Active'";
 $result_price2=mysqli_query($con,$display_price2);
 
 while ($row_price = mysqli_fetch_array($result_price2)){
