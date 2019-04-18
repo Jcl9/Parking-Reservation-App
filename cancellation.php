@@ -8,7 +8,7 @@
     }
 
     $Rid = intval(htmlspecialchars($_POST["Rid"]));
-    $Lno = "SELECT Gar_level from RESERVATION where Rid=$Rid";
+    $Lno = "SELECT Gar_level from reservation where Rid=$Rid";
     $datecancelled = new DateTime("now");
     $datereserved = "SELECT Reserve_date from RESERVATION WHERE Rid=$Rid";
     $interval = $datecancelled->diff($datereserved);
@@ -40,12 +40,18 @@
 			else{
 				echo "Error: " . $sql . "<br>" . mysqli_error($con);
 			}
-
-			mysqli_close($con);
-	}
+        }
+		$sql = "DELETE FROM reservation WHERE Rid = $Rid";
+            if (mysqli_query($con, $sql)) {
+                echo "<h3>Booking deleted.</h3>";
+            }
+            else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($con);
+            }
+            mysqli_close($con);
 ?>
 
-<a href="reserve2.php"><p>Back to the reservation page</p></a>
+<a href="reserve.php"><p>Back to the reservation page</p></a>
 
 </body>
 
