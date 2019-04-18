@@ -32,5 +32,5 @@ while ($row_price = mysqli_fetch_array($result_price2)){
 echo "The total revenue for dates: '$start_date' and '$end_date' is: $", $total_revenue;
 
 
-
+mysqli_close($con);
 ?>

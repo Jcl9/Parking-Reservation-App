@@ -17,7 +17,7 @@
     $totalspace = "SELECT Total_space from GAR_LEVEL WHERE Gar_level=$Lno";
 
     include('connect.php');
-    include('reserve.php');
+    include('reserve2.php');
 
 
 
@@ -54,7 +54,7 @@
             mysqli_close($con);
 ?>
 
-<a href="reserve.php"><p>Back to the reservation page</p></a>
+<a href="make_reservation.html"><p>Back to the reservation page</p></a>
 
 </body>
 
