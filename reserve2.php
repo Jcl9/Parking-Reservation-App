@@ -66,9 +66,12 @@ $user = 112 ;
 $addreservation = "insert into reservation(Res_id,Gar_name,Gar_level,User_id,Status,Event_id,Reserve_date,Res_fee,Refundability) values (NULL,'$pgarage','$glevel','$user','$status','$event_id','$date','$price','$refund')";
 $result = mysqli_query($con,$addreservation);
 
+
+
 if($result){
     echo "Reservation was successfull!";
-
+    $decrement_space = "update gar_level set Available_space_level = Available_space_level - 1 where gar_id = '$garage_id' and gar_level = '$glevel'";
+    $decrement_query = mysqli_query($con,$decrement_space);
 } else {
     die('Error: ' . mysqli_error($con));
 }
