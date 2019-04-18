@@ -15,22 +15,28 @@ while($row1 = mysqli_fetch_array($result)){
 }
 
 echo "Garage availables are";
+echo "<br>";
+
 
 $display_garage = "SELECT * FROM GARAGE";
 $result_garage = mysqli_query($con, $display_garage);
 
-while($row2 = mysqli_fetch_array($result_garage)){
-    echo "GarageID:", $row1[2] , $row1[3], ", " ;
+while($row2 = mysqli_fetch_assoc($result_garage)){
+    foreach ($row2 as $cname => $cvalue) {
+        echo "$cname: $cvalue ";
+
+    }
+    echo "<br>";
 }
 
 
 
-$row3 = mysqli_fetch_array($result);
-$display_distance = "SELECT * FROM venue_garage_distance where vname = '". $row3[5] . "'";
+$row3 = mysqli_fetch_assoc($result);
+$display_distance = "SELECT * FROM venue_garage_distance where vname = '". $row3[5] . "' ";
 $result_distance = mysqli_query($con,$display_distance);
 echo "Distances of venue from garages according to garage id are";
 
-while ($row4 = mysqli_fetch_array($result_distance)){
+while ($row4 = mysqli_fetch_assoc($result_distance)){
     echo "GarageID:" , $row4[2], " Distance ", $row4[3] ;
 }
 
