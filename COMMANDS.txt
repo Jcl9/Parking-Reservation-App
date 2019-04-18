@@ -2,3 +2,6 @@
 
 INSERT:
 insert into customer(Fname,Lname,User_id,Password,Phone_num,Vehicle_id,Vehicle_type,admin) values ('name','name','uid','pwd','phone','vid','vtype','0')";
+
+
+INSERT INTO GARAGE_LEVEL_EVENT_DATE (Gar_id,Gar_level,Event_id,CapAllowed,Price) VALUES ('')
