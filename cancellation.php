@@ -6,7 +6,6 @@
             exit("EXECUTION ERROR!");
 
     }
-    session_start();
 
     include('connect.php');
     include('reserve2.php');
