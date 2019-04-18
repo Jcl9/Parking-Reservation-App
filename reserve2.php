@@ -62,14 +62,19 @@ $event_result = "Select Event_ID From event where event_name = '$event' and even
 $event_query = mysqli_query($con, $event_result);
 $row_event = mysqli_fetch_array($event_query);
 $event_id = $row_event[0];
-$user = 112 ;
+$user = 114 ;
 $addreservation = "insert into reservation(Res_id,Gar_name,Gar_level,User_id,Status,Event_id,Reserve_date,Res_fee,Refundability) values (NULL,'$pgarage','$glevel','$user','$status','$event_id','$date','$price','$refund')";
 $result = mysqli_query($con,$addreservation);
 
 
+$reserve_result = "Select Res_ID from reservation where user_id = '$user'";
+$reserve_query = mysqli_query($con, $reserve_result);
+$row_reserve = mysqli_fetch_array($reserve_query);
+$reserve_id = $row_reserve[0];
 
 if($result){
-    echo "Reservation was successfull!";
+    echo "Reservation was successfull! ";
+    echo "Reservation id is: ", $reserve_id;
     $decrement_space = "update gar_level set Available_space_level = Available_space_level - 1 where gar_id = '$garage_id' and gar_level = '$glevel'";
     $decrement_query = mysqli_query($con,$decrement_space);
 } else {
