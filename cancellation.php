@@ -6,6 +6,11 @@
             exit("EXECUTION ERROR!");
 
     }
+    session_start();
+
+    include('connect.php');
+    include('reserve2.php');
+    include ('reserve_revenue.php');
 
     $Rid = $_POST["Res_id"];
     $Lno = "SELECT Gar_level from reservation where Res_id=$Rid";
@@ -21,13 +26,9 @@
     $res_fee = "SELECT res_fee FROM reservation where Res_id = $Rid";
     $updated_totalrevenue = mysqli_query($con,$total_revenue);
 
-    include('connect.php');
-    include('reserve2.php');
-    include ('reserve_revenue.php');
-
 
         $sql = "UPDATE reservation SET status = 'cancelled' WHERE Res_id = $Rid";
-	
+
         if (mysqli_query($con, $sql)) {
             if ($daydiff >= 2) {
                 $updated_avai_space = $avai_space + 1;
