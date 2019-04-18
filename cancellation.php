@@ -27,24 +27,23 @@
 
 
         $sql = "UPDATE reservation SET status = 'cancelled' WHERE Res_id = $Rid";
-	if ($daydiff >= 2) {
+	
         if (mysqli_query($con, $sql)) {
-            $updated_avai_space = $avai_space + 1;
-            $updated_total_space = $total_space + 1;
-            $updated_totalrevenue = $total_revenue - $res_fee;
-            echo "<h3>Booking cancelled and refunded.</h3>";
-        } 
-        else {
-            if (mysqli_query($con, $sql)) {
+            if ($daydiff >= 2) {
+                $updated_avai_space = $avai_space + 1;
+                $updated_total_space = $total_space + 1;
+                $updated_totalrevenue = $total_revenue - $res_fee;
+                echo "<h3>Booking cancelled and refunded.</h3>";
+            }
+            else {
                 $updated_avai_space = $avai_space + 1;
                 $updated_total_space = $total_space + 1;
                 echo "<h3>Booking cancelled but not refunded.</h3>";
             }
         }
-    }
-	else {
-             	echo "Error: " . $sql . "<br>" . mysqli_error($con);
-            }
+	    else {
+	        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+	    }
 
 	$sql2 = "DELETE FROM reservation WHERE Res_id = $Rid";
         if (mysqli_query($con, $sql2)) {
