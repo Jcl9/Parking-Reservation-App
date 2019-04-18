@@ -5,29 +5,27 @@
     <title>event main page</title>
 </head>
 <body>
-    <p>Hi, dear administrator! this is the event main page</p>
-    <p></p>
-    <p>please select from below what do you want to do today:</p>
+    <h1 style="ont-size:150%;color:blue;text-align:center;">Hi, dear administrator! this is the event main page</h1>
+    <br>
+    <br>
+
+    <p style="text-align:center;">please select from below what do you want to do today:</p>
     <div class="content">
-        <table class="table">
-            <tr>
-                <td>
-                    <button onclick="window.location.href='event_creation.html'">create an event</button>
-                </td>
-                <td>
-                    <button onclick="window.location.href='event_delete_mainpage.html'">remove an event</button>
-                </td>
+        <p style="text-align:center;">
+        <button onclick="window.location.href='event_creation.html'">create an event</button>
+        <button onclick="window.location.href='event_delete_mainpage.html'">remove an event</button>
+        <button onclick="window.location.href='event_listing.html'">search events</button>
+        <button onclick="window.location.href='event_change_date.html'">change the date of a event based on event ID</button>
+        <button onclick="window.location.href='event_change_price.html'">change price</button>
+        <button onclick="window.location.href='event_change_cap.html'">change available spaces</button>
 
-                <td>
-                    <button onclick="window.location.href='event_listing.html'">search events</button>
-                </td>
+        </p>
 
-                <td>
-                    <button onclick="window.location.href='event_change_date.html'">change the date of a event based on event ID</button>
-                </td>
-            </tr>
-        </table>
-        <p>if you are not sure about the event ID, please go to search event section and search event ID by event name</p>
+
+        <br>
+        <br>
+        <br>
+        <p style="font-size:90%;color:olivedrab;text-align:center;">if you are not sure about the event ID, please go to search event section and search event ID by event name</p>
     </div>
 </body>
 </html>
