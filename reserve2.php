@@ -78,3 +78,6 @@ if($result){
 
 mysqli_close($con);
 ?>
+
+<a href="make_reservation.html"><p>Back to the reservation page</p></a>
+<a href="reservation_main.html"><p>Back to the main page</p></a>

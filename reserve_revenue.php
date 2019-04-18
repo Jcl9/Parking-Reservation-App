@@ -34,3 +34,5 @@ echo "The total revenue for dates: '$start_date' and '$end_date' is: $", $total_
 
 mysqli_close($con);
 ?>
+
+<a href="reservation_main.html"><p>Back to the main page</p></a>
