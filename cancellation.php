@@ -41,8 +41,8 @@
 				echo "Error: " . $sql . "<br>" . mysqli_error($con);
 			}
         }
-		$sql = "DELETE FROM reservation WHERE Rid = $Rid";
-            if (mysqli_query($con, $sql)) {
+		$sql2 = "DELETE FROM reservation WHERE Rid = $Rid";
+            if (mysqli_query($con, $sql2)) {
                 echo "<h3>Booking deleted.</h3>";
             }
             else {
