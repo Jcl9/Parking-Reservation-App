@@ -7,7 +7,7 @@
 
     }
 
-    $Rid = intval(htmlspecialchars($_POST["Rid"]));
+    $Rid = $_POST["Rid"];
     $Lno = "SELECT Gar_level from reservation where Rid=$Rid";
     $datecancelled = new DateTime("now");
     $datereserved = "SELECT Reserve_date from RESERVATION WHERE Rid=$Rid";
