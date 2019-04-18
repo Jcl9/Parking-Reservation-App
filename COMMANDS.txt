@@ -1,0 +1,4 @@
+
+
+INSERT:
+insert into customer(Fname,Lname,User_id,Password,Phone_num,Vehicle_id,Vehicle_type,admin) values ('name','name','uid','pwd','phone','vid','vtype','0')";
