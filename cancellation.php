@@ -13,7 +13,8 @@
     $datereserved = "SELECT Reserve_date from RESERVATION WHERE Rid=$Rid";
     $interval = $datecancelled->diff($datereserved);
     $daydiff = $interval->days;
-    $avai_space = "SELECT Available_space_level from RESERVATION WHERE Gar_level=$Lno";
+    $avai_space = "SELECT Available_space_level from GAR_LEVEL WHERE Gar_level=$Lno";
+    $totalspace = "SELECT Total_space from GAR_LEVEL WHERE Gar_level=$Lno";
 
     include('connect.php');
     include('reserve.php');
@@ -24,7 +25,8 @@
             $sql = "UPDATE reservation SET status = 'cancelled & refunded' WHERE Rid = $Rid";
             if (mysqli_query($con, $sql)) {
 
-                $avai_space = $avai_space + 1;
+                $query = mysql_query("UPDATE gar_level SET Available_space_level = $avai_space +1 WHERE Gar_level = $Lno");
+                $query2 = mysql_query("UPDATE gar_level SET Total_space = $totalspace +1 WHERE Gar_level = $Lno");
                 echo "<h3>Booking cancelled and refunded.</h3>";
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($con);
@@ -33,8 +35,9 @@
 		else{
 		   	$sql = "UPDATE reservation SET status = 'cancelled' WHERE Rid = $Rid";
 			if (mysqli_query($con, $sql)) {
-				
-				$avai_space = $avai_space + 1;
+
+                $query = mysql_query("UPDATE gar_level SET Available_space_level = $avai_space +1 WHERE Gar_level = $Lno");
+                $query2 = mysql_query("UPDATE gar_level SET Total_space = $totalspace +1 WHERE Gar_level = $Lno");
 				echo "<h3>Booking cancelled but not refunded.</h3>";
 			}
 			else{
