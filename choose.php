@@ -5,13 +5,13 @@ include('connect.php');
 echo "hello! event dates are:";
 echo "<br>";
 
-$eventname=$_POST['Event'];
 
-$display_date="SELECT * FROM EVENT where Event_name = '". $eventname . "'";
+$display_date="SELECT * FROM EVENT";
 $result=mysqli_query($con,$display_date);
 
 while($row1 = mysqli_fetch_array($result)){
-    echo $row1[3], ", ";
+    echo $row1[2];
+    echo "<br>";
 }
 
 echo "Garage availables are";
