@@ -14,7 +14,7 @@
     $avai_space = $_POST("Avai_space");
 
     include('connect.php');
-    include('reserve2.php');
+    include('reserve.php');
 
 
     $Rid = intval(htmlspecialchars($_POST["Rid"]));
